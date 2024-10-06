@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Taggy
  * Plugin URI: https://acemedia.ninja
- * Description: Provides tag suggestions for Movies via OMDb.
+ * Description: Provides WordPress tag suggestions for Movies via OMDb.
  * Version: 0.420.0
  * Author: Shane Rounce
  * Author URI: https://shanerounce.com
