@@ -4,7 +4,7 @@ Tags: tags, movies, omdb, suggestions, taxonomy
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 0.420.0
+Stable tag: 0.421.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,9 @@ Taggy is a WordPress plugin that provides tag suggestions for movies via the OMD
 Open an issue on the plugin's GitHub repository.
 
 == Changelog ==
+
+= 0.421.0 =
+* Security: OMDb titles are shown as text, and searches go through a REST route so the API key stays on the server.
 
 = 0.420.0 =
 * Initial public release.

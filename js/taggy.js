@@ -42,15 +42,17 @@
                         console.log("Making AJAX request to OMDb API with query:", query);
 
                         $.ajax({
-                            url: 'https://www.omdbapi.com/?s=' + encodeURIComponent(query) + '&apikey=' + taggy_api_key.apiKey,
-                            success: function (data) {
-                                console.log("Received response from OMDb API:", data);
-
+                            url: taggy_settings.searchUrl,
+                            data: { s: query.replace(/\+/g, ' ') },
+                            headers: { 'X-WP-Nonce': taggy_settings.nonce },
+                            success: function (titles) {
                                 resultsList.empty(); // Clear the list before adding new suggestions
 
-                                if (data.Search) {
-                                    data.Search.forEach(function (result) {
-                                        var listItem = $('<li>' + result.Title + '</li>');
+                                if (titles && titles.length) {
+                                    titles.forEach(function (title) {
+                                        var result = { Title: String(title) };
+                                        // Third-party text: set it as text, never as HTML.
+                                        var listItem = $('<li>').text(result.Title);
 
                                         // Insert the clicked tag suggestion into the input field
                                         listItem.on('click', function () {
